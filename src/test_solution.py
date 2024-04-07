@@ -19,7 +19,9 @@ def client():
 @pytest.mark.it("The Family structure has to be initialized with the 3 members specified in the instructions")
 def test_first_three(client):
     response = client.get('/members')
+    print("esta es una prueba", response.data)
     members = json.loads(response.data)
+    
     assert len(members) == 3
 
 @pytest.mark.it("Implement method POST /member to add a new member")
